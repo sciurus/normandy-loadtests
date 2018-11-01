@@ -1,9 +1,18 @@
 from molotov import scenario
+import os
+
+cloud = os.environ.get('MOLOTOV_CLOUD')
+if cloud == 'GCP':
+    _DOMAIN = 'stage.normandy.nonprod.cloudops.mozgcp.net'
+else:
+    _DOMAIN = 'normandy.stage.mozaws.net'
+
+print(f"Testing {_DOMAIN}")
 
 
 @scenario(weight=16)
 async def api_endpoint_test(session):
-    api_endpoint = 'https://normandy.stage.mozaws.net/api/v1/'
+    api_endpoint = f'https://{_DOMAIN}/api/v1/'
 
     async with session.get(api_endpoint) as resp:
         res = await resp.json()
@@ -19,7 +28,7 @@ async def api_endpoint_test(session):
 
 @scenario(weight=17)
 async def recipe_endpoint_test(session):
-    recipe_endpoint = 'https://normandy.stage.mozaws.net/api/v1/recipe/signed/?enabled=true'
+    recipe_endpoint = f'https://{_DOMAIN}/api/v1/recipe/signed/?enabled=true'
     async with session.get(recipe_endpoint) as resp:
         res = await resp.json()
         assert resp.status == 200
@@ -30,7 +39,7 @@ async def recipe_endpoint_test(session):
 
 @scenario(weight=17)
 async def action_endpoint_test(session):
-    action_endpoint = 'https://normandy.stage.mozaws.net/api/v1/action/signed'
+    action_endpoint = f'https://{_DOMAIN}/api/v1/action/signed'
     async with session.get(action_endpoint) as resp:
         res = await resp.json()
         assert resp.status == 200
@@ -41,7 +50,7 @@ async def action_endpoint_test(session):
 
 @scenario(weight=50)
 async def classify_client_test(session):
-    classify_client_endpoint = 'https://normandy.stage.mozaws.net/api/v1/classify_client'
+    classify_client_endpoint = f'https://{_DOMAIN}/api/v1/classify_client'
     async with session.get(classify_client_endpoint) as resp:
         res = await resp.json()
         assert resp.status == 200
