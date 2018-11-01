@@ -10,7 +10,7 @@ else:
 print(f"Testing {_DOMAIN}")
 
 
-@scenario(weight=16)
+@scenario(weight=1)
 async def api_endpoint_test(session):
     api_endpoint = f'https://{_DOMAIN}/api/v1/'
 
@@ -26,7 +26,7 @@ async def api_endpoint_test(session):
         assert 'classify-client' in res
 
 
-@scenario(weight=17)
+@scenario(weight=9)
 async def recipe_endpoint_test(session):
     recipe_endpoint = f'https://{_DOMAIN}/api/v1/recipe/signed/?enabled=true'
     async with session.get(recipe_endpoint) as resp:
@@ -37,7 +37,7 @@ async def recipe_endpoint_test(session):
         assert 'recipe' in res[0]
 
 
-@scenario(weight=17)
+@scenario(weight=1)
 async def action_endpoint_test(session):
     action_endpoint = f'https://{_DOMAIN}/api/v1/action/signed'
     async with session.get(action_endpoint) as resp:
@@ -48,7 +48,7 @@ async def action_endpoint_test(session):
         assert 'action' in res[0]
 
 
-@scenario(weight=50)
+@scenario(weight=89)
 async def classify_client_test(session):
     classify_client_endpoint = f'https://{_DOMAIN}/api/v1/classify_client'
     async with session.get(classify_client_endpoint) as resp:
