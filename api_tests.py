@@ -62,5 +62,6 @@ async def heartbeat_test(session):
     classify_client_endpoint = f'https://{_DOMAIN}/__heartbeat__'
     async with session.get(classify_client_endpoint) as resp:
         res = await resp.json()
+        # temporarily disabling until all migrations are applied in stage
         #assert resp.status == 200
         assert 'status' in res
