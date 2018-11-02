@@ -39,7 +39,7 @@ async def recipe_endpoint_test(session):
 
 @scenario(weight=1)
 async def action_endpoint_test(session):
-    action_endpoint = f'https://{_DOMAIN}/api/v1/action/signed'
+    action_endpoint = f'https://{_DOMAIN}/api/v1/action/signed/'
     async with session.get(action_endpoint) as resp:
         res = await resp.json()
         assert resp.status == 200
@@ -50,7 +50,7 @@ async def action_endpoint_test(session):
 
 @scenario(weight=1400)
 async def classify_client_test(session):
-    classify_client_endpoint = f'https://{_DOMAIN}/api/v1/classify_client'
+    classify_client_endpoint = f'https://{_DOMAIN}/api/v1/classify_client/'
     async with session.get(classify_client_endpoint) as resp:
         res = await resp.json()
         assert resp.status == 200
