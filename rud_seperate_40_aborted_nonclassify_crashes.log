@@ -1,0 +1,30 @@
+1
+ 03:05:30 up 1 day,  4:45,  3 users,  load average: 0.00, 0.24, 0.39
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+3
+ 03:10:31 up 1 day,  4:50,  3 users,  load average: 0.13, 0.24, 0.35
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+5
+ 03:15:33 up 1 day,  4:55,  3 users,  load average: 1.04, 0.66, 0.50
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+7
+ 03:20:35 up 1 day,  5:00,  3 users,  load average: 0.71, 0.81, 0.62
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+9
+ 03:25:39 up 1 day,  5:05,  3 users,  load average: 1.32, 1.20, 0.85
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+11
+ 03:30:43 up 1 day,  5:10,  3 users,  load average: 1.66, 1.63, 1.15
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+13
+ 03:35:46 up 1 day,  5:15,  3 users,  load average: 2.33, 2.06, 1.47
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+15
+ 03:40:50 up 1 day,  5:20,  3 users,  load average: 2.70, 2.53, 1.85
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
+17
+Wed Nov  7 03:45:59 UTC 2018
+molotov -p 8 -w 17 -d 900 api_tests.py
+15
+ 03:45:59 up 1 day,  5:26,  3 users,  load average: 1.92, 2.40, 2.01
+Testing stage.normandy.nonprod.cloudops.mozgcp.net
