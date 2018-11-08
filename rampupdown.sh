@@ -6,7 +6,7 @@ done
 
 echo 15
 uptime
-molotov -p 8 -w 15 -d 900 api_tests.py
+molotov -q -p 8 -w 15 -d 900 api_tests.py
 
 for i in `seq 13 -2 1`; do
 	echo $i
