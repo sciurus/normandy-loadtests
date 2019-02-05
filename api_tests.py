@@ -1,11 +1,11 @@
 from molotov import scenario
 import os
 
-cloud = os.environ.get('MOLOTOV_CLOUD')
-if cloud == 'GCP':
-    _DOMAIN = 'stage.normandy.nonprod.cloudops.mozgcp.net'
+cdn = os.environ.get('MOLOTOV_USE_CDN', False)
+if cdn:
+    _DOMAIN = 'normandy-cdn-gcp.stage.mozaws.net'
 else:
-    _DOMAIN = 'normandy.stage.mozaws.net'
+    _DOMAIN = 'stage.normandy.nonprod.cloudops.mozgcp.net'
 
 print(f"Testing {_DOMAIN}")
 
